@@ -1,0 +1,120 @@
+table{
+    margin: auto;
+    width:90%;
+    align-items: center;
+    
+}
+.container{
+    width: 90%;
+    border-radius: 7px;
+}
+th.mat-sort-header-sorted {
+    color: black;
+  }
+
+.d-flex{
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    margin-top: 12px;
+
+    
+    
+    button{
+     transform: scale(130%);
+  }
+}
+
+
+.card-my{
+    width: 90%;
+    margin: 30px auto !important;
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%) !important;
+    mat-card-actions{
+        margin-bottom: 4px;
+    }
+}
+.paginator{
+    width: 90%;
+    margin-left: 5%;
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%)
+}
+
+.table > :not(:first-child) {
+    border-top: 1px solid darkgrey;
+}
+
+.message{
+    font-size: 20px;
+    font-family: Helvetica Neue;
+    border-bottom: 2px solid darkgrey;
+    text-align: center;
+    font-weight: bold;
+}
+.messages{
+    font-size: 20px;
+    font-family: Helvetica Neue;
+    border-bottom: 2px solid darkgrey;
+    text-align: center;
+    font-weight: bold;
+    width: 90%;
+    margin: 1px auto 20px !important;
+}
+
+#filter{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+
+
+// .filter{
+
+
+//     border-bottom: 2px solid darkgrey;
+   
+//     width: 90%;
+//     margin-left: 5%;
+
+
+//     .filters {
+//         // font-size: 14px;
+//         margin: auto;
+//         // width: 90%;
+//         width:100%;
+//         display: flex;
+//         gap: 5px;
+//         margin-bottom: -22px;
+
+//         padding-bottom: 0px;
+//         border-bottom-right-radius:0px ;
+//         border-bottom-left-radius:0px ;
+//         margin-bottom: 1px;
+
+//         box-shadow: 0px -4px 10px -3px rgb(0 0 0 / 14%), 0px -4px 14px 2px rgb(0 0 0 / 12%)
+//     }
+// }
+.row{
+    align-items: center;
+    justify-content: space-evenly;
+}
+.col-3{
+    display: flex;
+    justify-content: space-around;
+}
+.add{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%) !important;
+}
+#resume{
+    // border-bottom-right-radius:0px ;
+    // border-bottom-left-radius:0px ;
+    box-shadow: 0px -4px 10px -3px rgb(88 78 78 / 14%), 0px -4px 14px 2px rgb(0 0 0 / 12%)
+}
+#filter{
+     border-bottom-right-radius:0px ;
+    border-bottom-left-radius:0px ;
+}

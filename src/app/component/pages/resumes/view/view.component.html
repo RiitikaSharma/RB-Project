@@ -1,0 +1,114 @@
+<div id="print_div">
+    <div class="conatiner" >
+        <div class="row"  style="margin:0">    
+            <div class="col-3" style=" background-color: bisque;">
+                <div class="space1"></div>
+                <div class="section1">
+                    <div class="space2"></div>
+                    <!-- <div class="circle my-3" style="margin:auto; color:white "><h5>PHOTO</h5></div> -->
+                    <img class="circle my-3"   src="assets/img/testimonial-2.jpg">
+                    <div class="name" ><h4>{{person?.personal.firstname}}&nbsp;{{person?.personal.lastname}}</h4></div>
+                    <div class="expertise"><sub>{{person?.personal.designation}}</sub></div>
+                </div>
+                <div class="content">
+                    <div class="section2">
+                        <div class="area1" style="text-align: center;"><h6>CONTACT</h6></div>
+                        <div class="phone" style="text-align: center;"><sub ><b>PHONE</b></sub><br><sub >{{person?.personal.contact}}</sub></div>
+                        <div class="mail" style="text-align: center;"><sub><b>MAIL</b></sub><br><sub>{{person?.personal.mail}}</sub></div>
+                        <div class="website" style="text-align: center;"><sub><b>WEBSITE</b></sub><br><sub>{{person?.personal.git}}</sub></div>
+                        <div class="address" style="text-align: center;"><sub><b>ADDRESS</b></sub><br><sub>{{person?.address.flat}}, {{person?.address.area}}, {{person?.address.town}}</sub><br><sub>{{person?.address.pincode}}, {{person?.address.state}}, {{person?.address.country}}</sub></div>
+                    </div><br>
+                    <div class="sepertator" style="text-align: center; border-bottom: 1px solid black; margin:auto; width: 150px;"></div><br>
+                    <div class="section3">
+                        <div class="area2" style="text-align: center;"><h6>SKILLS</h6></div>   <!--*ngFor="let contact of person?.social"-->
+                        <!-- <div *ngFor="let contact of person?.social"> -->
+                            <div class="skill1" style="text-align: center;"><sub></sub>Photoshop</div>  <!---->
+                            <div class="skill2" style="text-align: center;"><sub>InDesign</sub></div>  <!---->
+                            <div class="skill3" style="text-align: center;"><sub>Sketch</sub></div>  <!---->
+                            <div class="skill4" style="text-align: center;"><sub>CorelDraw</sub></div>  <!---->
+                            <div class="skill5" style="text-align: center;"><sub>InVision</sub></div>  <!---->
+                        <!-- </div> -->
+                    </div><br>
+                    <div class="sepertator" style="text-align: center; border-bottom: 1px solid black; margin:auto; width: 150px;"></div><br>
+                    <div class="section4">
+                        <div class="area3" style="text-align: center;"><h6>HOBBIES</h6></div>
+                        <div class="hooby1" style="text-align: center;"><sub>Traveling</sub><sub style="margin-left:6px;">-</sub><sub style="margin-left: 6px;">Music</sub></div>
+                        <div class="hooby2" style="text-align: center;"><sub>Bicycling</sub><sub style="margin-left:6px;">-</sub><sub style="margin-left:6px;">Photography</sub></div>
+                        <div class="hooby3" style="text-align: center;"><sub>Gym&nbsp;</sub><sub style="margin-left:6px;">-</sub><sub style="margin-left:6px;">Game</sub></div>            
+                    </div><br>
+                    <!-- <div><button mat-raised-button color="primary" (click)="printDiv()">print</button></div> -->
+                    <!-- <div><input type="button" onclick="printDiv('main')" value="print a div!" /></div> -->
+                </div>
+            </div>
+            <div class="col-9" style="background-color: aliceblue;">  <!-- height: 925px; width: 1011px; -->
+                <!-- <div class="border" style="width: 30px; background-color: cadetblue; height: 925px;"></div> -->
+                <!-- <div class="container"> -->
+                    <div class="section5" style="border-left: 2px solid black;">
+                        <div class="profile" style="margin-top: 20px; margin-left:20px;" ><label><b>PROFILE</b></label><br><div style="margin-top:5px;"><sub>{{person?.objective.objective}}</sub></div></div>
+                    </div><br>
+                    <div class="section6" style="border-left: 2px solid black;">
+                        <div class="experiences" style="margin-top: 20px; margin-left:20px;" ><label><b>EXPERIENCES</b></label><br>
+                            <div class="exp1" style="margin-top: 5px;"  ><label style="font-size:14px;"><b>24 DESIGN STUDIO</b> //GRAPHIC DESIGNER <b class="date">2013-2015</b></label><br><div ><sub>To get an opportunity where I can make the best of my potential and contribute to the organization’s growth
+                                To get an opportunity where I can make the best of my potential and contribute to the organization’s growth
+                            </sub></div></div>
+                            <div class="exp2" style="margin-top: 5px;"  ><label style="font-size:14px;"><b>24 DESIGN STUDIO</b> //GRAPHIC DESIGNER <b class="date">2015-2016</b></label><br><div><sub>To get an opportunity where I can make the best of my potential and contribute to the organization’s growth
+                                To get an opportunity where I can make the best of my potential and contribute to the organization’s growth
+                            </sub></div></div>
+                            <div class="exp3" style="margin-top: 5px;"  ><label style="font-size:14px;"><b>24 DESIGN STUDIO</b> //GRAPHIC DESIGNER <b class="date">2016-Present</b></label><br><div><sub>To get an opportunity where I can make the best of my potential and contribute to the organization’s growth
+                                To get an opportunity where I can make the best of my potential and contribute to the organization’s growth
+                            </sub></div></div>
+                        </div>
+                    </div><br>
+                    <div class="section7" style="border-left: 2px solid black;">
+                        <div class="education" style="margin-top: 20px; margin-left:20px; " ><label><b>EDUCATION</b></label><br>
+                            <div class="edu1" style="margin-top: 5px;" ><label style="font-size:14px;"><b>CLEMON UNIVERSITY</b> //MASTER OF ART <b class="dates" >1998-2001</b></label><br><div><sub>To get an opportunity where I can make the best of my potential and contribute to the organization’s growth
+                                To get an opportunity where I can make the best of my potential and contribute to the organization’s growth
+                            </sub></div></div>
+                            <div class="edu2" style="margin-top: 5px;"><label style="font-size:14px;"><b>HAVARD UNIVERSITY</b> //BUSINESS MANAGEMENT <b class="datess">2004-2007</b></label><br><div><sub>To get an opportunity where I can make the best of my potential and contribute to the organization’s growth
+                                To get an opportunity where I can make the best of my potential and contribute to the organization’s growth
+                            </sub></div></div>
+                            <div class="edu3" style="margin-top: 5px;"><label style="font-size:14px;"><b>24 DESIGN STUDIO</b> //GRAPHIC DESIGNER <b class="dates">2010-2013</b></label><br><div><sub>To get an opportunity where I can make the best of my potential and contribute to the organization’s growth
+                                To get an opportunity where I can make the best of my potential and contribute to the organization’s growth
+                            </sub></div></div>
+                        </div>
+                    </div><br>
+                    <div class="sectionA"style="border-left: 2px solid black; " >
+                        <div class="row" style="margin-top: 20px; margin-left:20px;">
+                            <div class="col-5" style="padding:0;" >
+                                    <div class="section8">
+                                        <label><b>CONNECT</b></label><br>
+                                        <div class="list1" style="margin-top: 20px;">
+                                                <div style="display: flex; align-items: flex-end; justify-content: flex-start; gap: 30px;" ><mat-icon>list</mat-icon><label> www.dribbble.com</label></div><br>
+                                                <div style="display: flex; align-items: flex-end; justify-content: flex-start; gap: 30px;" ><mat-icon>list</mat-icon><label> www.dribbble.com</label></div><br>
+                                                <div style="display: flex; align-items: flex-end; justify-content: flex-start; gap: 30px;" ><mat-icon>list</mat-icon><label> www.dribbble.com</label></div><br>
+                                                <div style="display: flex; align-items: flex-end; justify-content: flex-start; gap: 30px;" ><mat-icon>list</mat-icon><label> www.dribbble.com</label></div><br>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="col-4" style="border-left: 2px solid black; padding: 0;">
+                                <!-- <div class="conatiner"> -->
+                                    <div class="section9" style="margin-left:20px;">
+                                        <label><b>REFERENCES</b></label><br>
+                                        <div class="list2" style="background-color: bisque; text-align: center; width: 250px; margin-top: 20px; padding: 20px;">
+                                            <div>
+                                                <sub>jhon//Pexel Perfection</sub><br>
+                                                <sub>P: +1234 5678 9900</sub><br>
+                                                <sub>E:jhon@pexelperfection.com</sub>
+                                            </div>
+                                            <div>
+                                                <sub>Ericka//For Marketing</sub><br>
+                                                <sub>P: +1234 5678 9900</sub><br>
+                                                <sub>E:ericka@formarketing.com</sub>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </div><br>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+<div><button mat-raised-button color="primary" (click)="printDiv('print_div')">print</button></div>

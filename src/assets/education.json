@@ -1,0 +1,14 @@
+{
+    "education" : [
+        {
+            "school" : "Columbia University",
+            "degree" : "Bachelor's",
+            "field" : "Engineering",
+            "grade" : "A+",
+            "starting" : 2016,
+            "ending" : 2017,
+            "activity" : "Volleball or any charity",
+            "description" : "About your activity and society"
+        }
+    ]
+}

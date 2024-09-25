@@ -1,0 +1,113 @@
+<div class="container p-3 my-3  ">
+  <div class="row">
+  <div class="col-6">
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates fuga deleniti ut. Reprehenderit odio adipisci laborum sint doloremque officiis error iure dolores odit, quidem modi voluptate expedita possimus officia autem.</p>
+  </div>
+  <div class="col-3">
+    <div class="add">
+      <button mat-button (click)="send()">
+        <mat-icon>add_circle_outline</mat-icon><br>Add Data</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="messages">
+  <p>Your Recent Resume</p>
+</div>
+<div class="container" id="resume">
+
+  <mat-card id="filter" class="row">     
+    <mat-form-field class="col-4" >
+      <mat-label>Category</mat-label>
+        <mat-select name="nameString" [(value)]="selectedname" placeholder="Name">
+          <mat-option [value]="'position'">No.</mat-option>
+          <mat-option [value]="'name'" >Name</mat-option>
+          <mat-option [value]="'weight'">Weight</mat-option>
+          <mat-option [value]="'symbol'">Symbol</mat-option>
+        </mat-select>
+        <sub> Selected = {{selectedname}} </sub>  
+    </mat-form-field>
+    <mat-form-field class="col-4">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder=" Your Text" #input>
+    </mat-form-field>
+  </mat-card>
+</div>
+
+
+<div class="table">
+  <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+    class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+      No.
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+      Name
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
+      Weight
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+      Symbol
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+  </ng-container>
+
+  <!-- edit Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by actions">
+      Actions
+    </th>
+    <td mat-cell *matCellDef="let element"> 
+      <button (click)="edit(element)" mat-icon-button color="primary">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button (click)="delete(element)" mat-icon-button color="warn">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+  </tr>
+ 
+</table>
+
+<div class="paginator">
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+  showFirstLastButtons 
+  aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>
+
+</div>
+
+
+
+
+

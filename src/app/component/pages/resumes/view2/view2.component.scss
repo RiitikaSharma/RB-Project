@@ -1,0 +1,55 @@
+.row{
+    margin-top: 2px;
+}
+
+.col-3{
+    text-align: center;
+}
+.image{
+    margin-top: 5px;
+    height:140px;
+    width: 140px;
+    background-color:  rgb(108, 163, 163);
+    border-radius: 50%;;
+ }
+
+#personal{
+    margin-top: 5px;
+    height: 150px;
+    background-color:  rgb(108, 163, 163) ;
+    color: white;
+}
+.name{
+    // margin-top: 10px;
+    font-size: x-large;
+}
+
+.label{
+    color: rgb(108, 163, 163) ;
+}
+
+.labels{
+    font-size: 25px;
+    color: rgb(108, 163, 163) ;
+    border-bottom: rgb(108, 163, 163);
+}
+
+.skill{
+    background-color: rgb(108, 163, 163);
+}
+
+.fill{
+    background-color: rgb(108, 163, 163);
+    color: white; 
+    text-align: center;
+    border-radius: 5px;
+
+}
+div{
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+}
+
+
+
+

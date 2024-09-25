@@ -1,0 +1,39 @@
+{
+    "personal" : {
+        
+        "firstname": "Ram",
+        "lastname": "kumar",
+        "designation": "UI&UX DESIGNER",
+        "parentname": "vinod kumar",
+        "gender": "male",
+        "contact": "1234567891",
+        "mail": "asd@com.com",
+        "git": "www.github.com",
+        "img": ""        
+    },
+    "address" : {
+        "country": "india",
+        "state": "chhattisgarh",
+        "pincode": "495001",
+        "flat": "103/2",
+        "area": "old bus stand street",
+        "town": "bilaspur"
+    },
+    "social": [
+        {
+            "contacts": "linkedin",
+            "url": "linkedin.com"
+        },
+        {
+            "contacts": "email",
+            "url": "email.com"
+        },
+        {
+            "contacts": "facebook",
+            "url": "facebook.com"
+        }
+    ],
+    "objective":{
+        "objective":"To get an opportunity where I can make the best of my potential and contribute to the organization’s growth"
+    }
+}

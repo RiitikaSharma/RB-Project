@@ -1,0 +1,172 @@
+<div class="container">
+  <div id="row1" class="row">
+    <form [formGroup]="workexp" (ngSubmit)="submitWorkexp(workexp.value)">
+      <mat-form-field class="col-md-6 p-2">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Ex: Retail Sales Manager" formControlName="title" type="text" required>
+      </mat-form-field>
+      <mat-form-field class="col-md-6 p-2">
+        <mat-label>Employment type</mat-label>
+        <mat-select matNativeControl required formControlName="fields" >
+          <mat-option value="#">Please select</mat-option>
+          <mat-option value="full-time">Full-time</mat-option>
+          <mat-option value="part-time">Part-time</mat-option>
+          <mat-option value="self-employed">Self-employed</mat-option>
+          <mat-option value="freelance">Freelance</mat-option>
+          <mat-option value="internship">Internship</mat-option>
+          <mat-option value="trainee">Trainee</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="col-md-6 p-2">
+        <mat-label>Company name</mat-label>
+        <input matInput placeholder="Organization Name" formControlName="organization" type="text" required>
+      </mat-form-field>
+      <mat-form-field class="col-md-6 p-2">
+        <mat-label>Location</mat-label>
+        <input matInput placeholder="Ex: Delhi, India" formControlName="location" type="text" required>
+      </mat-form-field>
+
+      <div class="col-md-6" style="margin-left: 10px;">
+        <mat-checkbox class="example-margin" formControlName="change" (change)="hide($event)" >I am currently working in this role</mat-checkbox>
+      </div><br>
+        <!-- {{event:MatCheckboxChange}} -->
+
+
+      <div class="col-md-6" style="margin-left: 8px;">
+        <mat-label >Start date*</mat-label>
+      </div>
+      <mat-form-field class="col-md-6 p-2">
+        <mat-label>Month</mat-label>
+        <mat-select matNativeControl required formControlName="startmonth" >
+          <mat-option value="#">Month</mat-option>
+          <mat-option value="january">January</mat-option>
+          <mat-option value="feburary">Feburary</mat-option>
+          <mat-option value="march">March</mat-option>
+          <mat-option value="april">April</mat-option>
+          <mat-option value="may">May</mat-option>
+          <mat-option value="june">June</mat-option>
+          <mat-option value="july">July</mat-option>
+          <mat-option value="august">August</mat-option>
+          <mat-option value="september">September</mat-option>
+          <mat-option value="october">October</mat-option>
+          <mat-option value="novemebr">Novemebr</mat-option>
+          <mat-option value="december">December</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="col-md-6 p-2" >
+        <mat-label>Year</mat-label>
+        <mat-select matNativeControl required formControlName="startyear" >
+          <mat-option value="#">Year</mat-option>
+          <mat-option value="2022">2022</mat-option>
+          <mat-option value="2021">2021</mat-option>
+          <mat-option value="2020">2020</mat-option>
+          <mat-option value="2019">2019</mat-option>
+          <mat-option value="2018">2018</mat-option>
+          <mat-option value="2017">2017</mat-option>
+          <mat-option value="2016">2016</mat-option>
+          <mat-option value="2015">2015</mat-option>
+          <mat-option value="2014">2014</mat-option>
+          <mat-option value="2013">2013</mat-option>
+          <mat-option value="2012">2012</mat-option>
+          <mat-option value="2011">2011</mat-option>
+          <mat-option value="2010">2010</mat-option>
+          <mat-option value="2009">2009</mat-option>
+          <mat-option value="2008">2008</mat-option>
+          <mat-option value="2007">2007</mat-option>
+          <mat-option value="2006">2006</mat-option>
+          <mat-option value="2005">2005</mat-option>
+          <mat-option value="2004">2004</mat-option>
+          <mat-option value="2003">2003</mat-option>
+          <mat-option value="2002">2002</mat-option>
+          <mat-option value="2001">2001</mat-option>
+          <mat-option value="2000">2000</mat-option>  
+        </mat-select>
+      </mat-form-field>
+      <div class="col-md-6" style="margin-left: 8px;" *ngIf="!ischecked" >
+        <mat-label >End date*</mat-label>
+      </div>
+      <mat-form-field class="col-md-6 p-2" *ngIf="!ischecked">
+        <mat-label>Month</mat-label>
+        <mat-select matNativeControl required formControlName="endmonth"  >
+          <mat-option value="#">Month</mat-option>
+          <mat-option value="january">January</mat-option>
+          <mat-option value="feburary">Feburary</mat-option>
+          <mat-option value="march">March</mat-option>
+          <mat-option value="april">April</mat-option>
+          <mat-option value="may">May</mat-option>
+          <mat-option value="june">June</mat-option>
+          <mat-option value="july">July</mat-option>
+          <mat-option value="august">August</mat-option>
+          <mat-option value="september">September</mat-option>
+          <mat-option value="october">October</mat-option>
+          <mat-option value="novemebr">Novemebr</mat-option>
+          <mat-option value="december">December</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="col-md-6 p-2" *ngIf="!ischecked">
+        <mat-label>Year</mat-label>
+        <mat-select matNativeControl required formControlName="endyear"  >
+          <mat-option value="#">Year</mat-option>
+          <mat-option value="2022">2022</mat-option>
+          <mat-option value="2021">2021</mat-option>
+          <mat-option value="2020">2020</mat-option>
+          <mat-option value="2019">2019</mat-option>
+          <mat-option value="2018">2018</mat-option>
+          <mat-option value="2017">2017</mat-option>
+          <mat-option value="2016">2016</mat-option>
+          <mat-option value="2015">2015</mat-option>
+          <mat-option value="2014">2014</mat-option>
+          <mat-option value="2013">2013</mat-option>
+          <mat-option value="2012">2012</mat-option>
+          <mat-option value="2011">2011</mat-option>
+          <mat-option value="2010">2010</mat-option>
+          <mat-option value="2009">2009</mat-option>
+          <mat-option value="2008">2008</mat-option>
+          <mat-option value="2007">2007</mat-option>
+          <mat-option value="2006">2006</mat-option>
+          <mat-option value="2005">2005</mat-option>
+          <mat-option value="2004">2004</mat-option>
+          <mat-option value="2003">2003</mat-option>
+          <mat-option value="2002">2002</mat-option>
+          <mat-option value="2001">2001</mat-option>
+          <mat-option value="2000">2000</mat-option>  
+        </mat-select>
+      </mat-form-field>
+    </form>
+    <div class="button">
+        <button mat-button (click)="professional_back()" >Back</button>
+        <button mat-button (click)="reset" (click)="submitWorkexp(workexp.value)" >Add</button>
+        <button mat-button (click)="professional_next()" >Next</button>
+    </div>
+  </div>
+  <!-- <div id="row2" class="row">
+    <div class="tables table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl">
+      <table id="table1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+              <th scope="col">S.No.</th>
+              <th scope="col">Fields</th>
+              <th scope="col">Organization</th>
+              <th scope="col">Location</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Area of work</th>
+              <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let object of objects; let i = index;">
+              <th scope="row">{{i+1}}</th>
+              <td>{{object.fields}}</td>
+              <td>{{object.organization}}</td>
+              <td>{{object.location}}</td>
+              <td>{{object.startdate}}-{{object.enddate}}</td>
+              <td>{{object.aow}}</td>
+              <td><button (click)="remove(i)" type="button" mat-icon-button color="warn">
+                <mat-icon>delete</mat-icon>
+              </button></td>
+            </tr>
+        </tbody>    
+      </table>
+    </div>
+  </div> -->
+</div>

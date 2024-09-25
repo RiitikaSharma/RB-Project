@@ -1,0 +1,107 @@
+<div id="contain">
+ <div class="container">
+    <div class="row">
+        <div class="col-3" id="image">
+              <img class="image" src="assets/image/experience.jpg">
+        </div>    
+        <div class="col-9 " id="personal">
+              <span class="name">{{person?.personal.firstname}} {{person?.personal.lastname}}</span>
+              <div class="add">
+                {{person?.address.flat}} {{person?.address.area}} {{person?.address.town}} {{person?.address.pincode}}
+                {{person?.address.state}} {{person?.address.country}}
+               </div>
+               <div class="objective" style="margin-top: 13px;">
+                {{person?.objective.objective}}
+               </div>
+        </div>    
+    </div>
+    <div class="row">
+      <div class="col-3 " >
+        <div class="contact" >
+            <span class="label"><mat-icon>phone</mat-icon></span><br>
+            <a href="tel::{{person?.personal.contact}}">{{person?.personal.contact}}</a><br>
+            <!-- <span class="label"><mat-icon>email</mat-icon></span><br>
+            <a href="mailto::{{}}">Janny@gmail.com</a><br> -->
+            <ng-container *ngFor="let contact of person?.social;index as i">
+              <div  *ngIf="i < person?.social.length">
+                <div class="label" >{{ contact.contacts}}</div>
+                <div >{{ contact.url}}</div>
+              </div>  
+              
+            </ng-container>
+            <!-- <span class="label">Linkedln</span><br>
+            <span>abc</span><br>
+            <span class="label">Skipe</span><br>
+            <span>abc</span>        -->
+        </div> <br>
+        <div class="skills" >
+          <div>
+            <b><label class="labels">Skills</label></b>
+            <div class="fill" >Angular</div><br>
+            <div class="fill">Java</div><br>
+            <div class="fill">C++</div><br>
+            <div class="fill" >HTML</div><br>
+          </div>
+        </div> 
+        <div class="skills" >
+            <b><label class="labels">Hobbies</label></b><br>
+            <div class="fill" >Front end designing</div><br>
+            <div class="fill" >Editing photo/video</div><br>
+            <div class="fill">Craftwork</div><br>
+           <div class="fill">Painting</div><br>
+        </div> 
+      </div>  
+      <div class="col-9" style="margin-top: 10px;">
+        <div style="border-bottom : 2px solid rgb(108, 163, 163)">
+       <label class="labels">Professional Summery</label>
+       </div>
+       <div> * Junior Software Engineer - RESILIENCE SOFT  Full Time  2021-currently working</div>
+       <div> * Junior Software Engineer - RESILIENCE SOFT  Full Time  2021-currently working</div>
+       <div> * Junior Software Engineer - RESILIENCE SOFT  Full Time  2021-currently working</div>
+       <div> * Junior Software Engineer - RESILIENCE SOFT  Full Time  2021-currently working</div><br>
+       <div class="education">
+        <div style="border-bottom : 2px solid rgb(108, 163, 163)">
+           <label class="labels">Education</label>
+           </div>
+           <div  *ngFor="let education of education.education">
+               <div>* {{education.degree}} | {{education.starting}} - {{education.ending}} | {{education.grade}}  </div>
+               <!-- {{education?.education.degree}} {{education?.education.field}} | {{education?.education.starting}}
+            -{{education?.education.ending}} | {{education?.education.grade}} -->
+           
+            <div>{{education.field}}</div> 
+           <div>{{education.school}}</div>
+           </div>
+           <!--         
+           <div>* XII | 2017-2018 | 80% </div>
+           <div>St. Xavier’s High School, Delhi</div>
+ 
+            <div>* X | 2015-2016 | 82% </div>
+           <div>St. Xavier’s High School, Delhi</div> -->
+       </div><br>
+       <div class="project">
+           <div style="border-bottom : 2px solid rgb(108, 163, 163)">
+              <label class="labels">Project Experience</label>
+           </div>
+           <div>Project Name: College Gatepass</div>
+           <div>Tools: Mysql , PHP , VS code</div>
+           <div>Description: It’s app which provides service to its user to take half day leave from the college 
+                and the HOD’s and Teachers have the access to accept the request or to deny the request.
+            </div><br>
+        </div>    
+        <div class="certificate" >
+           <div style="border-bottom : 2px solid rgb(108, 163, 163)">
+             <label class="labels" >Certificates</label>
+           </div>
+              <div>* PHP – RESILIENCE SOFT</div>
+              <div>1-Aug-2020 to 31-Aug-2020</div>
+              <div>* C LANGUAGE - PROLOT</div>
+              <div>22-July-2019 to 22-Aug-2019</div>
+        </div>
+    </div>
+ </div>
+</div>
+</div>
+<div style="margin-top : 20px">
+<button (click)="print('contain')">click</button>
+</div>
+

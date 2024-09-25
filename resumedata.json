@@ -1,0 +1,26 @@
+{
+  "Resumes": [
+    {
+      "personalDetails": {
+        "personal": {
+          "firstname": "",
+          "lastname": "",
+          "parentname": "",
+          "gender": "",
+          "contact": "",
+          "img": ""
+        },
+        "address": {
+          "firstname": "",
+          "lastname": "",
+          "parentname": "",
+          "gender": "",
+          "contact": "",
+          "img": ""
+        }
+      },
+      "UserId": 2,
+      "id": 1
+    }
+  ]
+}

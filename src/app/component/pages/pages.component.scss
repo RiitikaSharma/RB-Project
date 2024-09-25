@@ -1,0 +1,115 @@
+.sidenav-container {
+  height: 100%;
+}
+mat-sidenav {
+  border: 0 !important;
+}
+mat-sidenav-content section {
+  width: 100%;
+}
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+  background-color: #FF4B2B;
+  color: white;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  
+  background: #FF416C;
+	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C);
+}
+
+
+.footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  background-color: white;
+  padding: 12px;
+}
+
+.button{
+  position: absolute;
+  right: 25px;
+}
+.welcome{
+  text-align: center;
+}
+mat-nav-list a::after{
+  opacity: 0;
+  content: "";
+  transition: 0.5s;
+  position: absolute;
+  transform: translateY(-100%);
+  background-color: #FF416C;
+  height: 100%;
+  width: 1px;
+
+  background: #FF416C;
+	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C);
+
+  
+}
+a.selected {
+  background: rgba(0,0,0,.02);
+}
+a.selected::after {
+  opacity: 1 !important;
+  width: 4px !important;
+  
+}
+mat-nav-list a:hover:after{
+  opacity: 1;
+  width: 4px;
+}
+.select{
+  transform: rotate(180deg);
+}
+.selects{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.mat-list-base{
+  padding-top: 0;
+}
+.nav{
+  width:180px
+}
+#add{
+  display: flex;
+  justify-content: center;
+}
+#home{
+  display: flex;
+  justify-content: center;
+}
+.grid{
+  width: 180px;
+}
+// .menu{
+//   background-color: #FF4B2B;
+//   height: 64px;
+//   margin-top: -8px;
+//   color: white;
+// }
+
+#home{
+  display: flex;
+  // justify-content: center;
+}
+#add{
+  display: flex;
+  // justify-content: center;
+}
+#feed{
+  display: flex;
+}

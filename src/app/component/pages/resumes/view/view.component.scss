@@ -1,0 +1,130 @@
+.container{
+    height: 100%;
+    width: 100%;
+}
+.space1{
+    height:90px; 
+    background-color:white; 
+    margin:0 -12px;
+}
+.space2{
+    height:206px;
+}
+.content{
+    transform: translate(-2px, -64px);
+    margin-top:90px;
+}
+.date{
+    margin-left:300px
+}
+.dates{
+    margin-left: 315px;
+}
+.datess{
+    margin-left:260px;
+}
+.circle{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 142px;
+    left: 13%;
+    margin: 0;
+    height: 150px;
+    width: 150px;
+    border: 10px solid back;
+    border-radius: 50%;
+    // background-color: black ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name{
+    text-align: center;
+    position: absolute;
+    top:268px; 
+    left:13%;
+    transform: translate(-50%, -50%);
+    margin:0;
+}
+.expertise{
+    text-align: center; 
+    position: absolute;
+    top:280px; 
+    left:13%;
+    transform: translate(-50%, -50%);
+    margin:0;
+}
+
+@media print {
+    header, footer, aside, form, … {
+        display: none;
+    }
+    .container{
+        height:100%;
+        width: 100%;
+    }
+    .circle{
+        top: 80px;
+    }
+    .name{
+        text-align: center;
+        position: absolute;
+        top:200px; 
+        left:13%;
+        transform: translate(-50%, -50%);
+        margin:0;
+    }
+    .expertise{
+        top:210px;
+    }
+    .date{
+        margin-left: 150px;
+    }
+    .dates{
+        margin-left: 150px;
+    }
+    .datess{
+        margin-left: 100px;
+    }
+  }
+// @media only screen and (max-width: 1211px) {
+//     .circle{
+//         position: absolute;
+//         transform: translate(-50%, -50%);
+//         top: 142px;
+//         left: 129px;
+//         margin: 0;
+//         height: 150px;
+//         width: 150px;
+//         border: 10px solid back;
+//         border-radius: 50%;
+//         background-color: black ;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//     }
+// }
+
+
+
+
+div{
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    // position: relative;
+}
+
+.row{
+    margin-top: 20px;
+}
+.image{
+    height: 150px;
+    width: 150px;
+    background-color: rgb(159, 226, 226);
+    border-radius: 50%;
+}
+
+#personal{
+    height: 150px;
+    background-color:  rgb(159, 226, 226) ;
+}

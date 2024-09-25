@@ -1,0 +1,177 @@
+<div class="container">
+  <div class="row">
+    <!-- <div class='col-md' id="stepper_view"> -->
+      <ng-container [ngSwitch]="stepperOrientation | async">
+        <div *ngSwitchCase="'horizontal'"></div>
+        <div *ngSwitchCase="'vertical'"></div>
+      </ng-container>
+    
+      <mat-stepper [orientation]="(stepperOrientation | async)!">
+        <!-- ...................................PERSONAL FORM............................................. -->
+        <mat-step [stepControl]="personal" errorMessage="Personal is required.">
+          <ng-template matStepLabel>Personal details</ng-template>
+          <form class="row" [formGroup]="personal" (ngSubmit)="submitPersonal(personal.value)">
+            <mat-form-field class="col-md-6" >
+              <mat-label>First Name</mat-label>
+              <input matInput placeholder="First Name" formControlName="firstname" type="text" required>
+            </mat-form-field>
+            <mat-form-field class="col-md-6" >
+              <mat-label>Last Name</mat-label>
+              <input matInput placeholder="Last Name" formControlName="lastname" type="text" required>
+            </mat-form-field>
+            <mat-form-field class="col-md-12">
+              <mat-label>Parent's/Husband Name</mat-label>
+              <input matInput placeholder="Parent's/Husband Name" formControlName="parentname" type="text" required>
+            </mat-form-field>
+            <mat-form-field class="col-md-6" >
+              <mat-label>Gender</mat-label>
+              <mat-select matNativeControl required formControlName="gender">
+                <mat-option value="male">Male</mat-option>
+                <mat-option value="female">Female</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="col-md-6">
+              <mat-label>Contact No.</mat-label>
+              <input matInput placeholder="Contact Numbe " formControlName="contact" type="number" required>
+            </mat-form-field>
+            <div class="col-md-6" >
+              <button mat-raised-button id="image" type="button" md-button (click)="imgFileInput.click()" required>Upload Image</button>
+              <input hidden type="file" #imgFileInput (change)="selectFile($event)"/>
+              <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+              <img class="img" [src]="url" *ngIf="url">
+              <div [innerHtml]='msgs' *ngIf="msgs"></div>
+            </div>
+            <div class="button">
+              <button mat-button (click)="show1()" type="submit" matStepperNext >Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <!-- ...................................ADDRESS FORM............................................. -->
+        <mat-step [stepControl]="address" errorMessage="Address is required.">
+          <ng-template matStepLabel>Address</ng-template>
+          <form class="row" [formGroup]="address" (ngSubmit)="submitAddress(address.value)" >
+            <mat-form-field class="col-md-6" >
+              <mat-label>Flat, House no., Building, Company, Apartment</mat-label>
+              <input matInput placeholder="Flat, House no., Building, Company, Apartment" formControlName="flat" type="text" required>
+            </mat-form-field>
+            <mat-form-field class="col-md-6">
+              <mat-label>Area, Colony, Street, Sector, Villages</mat-label>
+              <input matInput placeholder="Area, Colony, Street, Sector, Villages" formControlName="area" type="text">
+            </mat-form-field>
+            <mat-form-field class="col-md-6" >
+              <mat-label>Town/City</mat-label>
+              <input matInput placeholder="Town/City" formControlName="town" type="text" required>
+            </mat-form-field>
+            <mat-form-field class="col-md-6" >
+              <mat-label>Pin Code</mat-label>
+              <input matInput placeholder="Pin Code" formControlName="pincode" type="text" required>
+            </mat-form-field>
+            <mat-form-field class="col-md-6" >
+              <mat-label>State</mat-label>
+              <input matInput placeholder="State" formControlName="state" type="text" required>
+            </mat-form-field>
+            <mat-form-field class="col-md-6">
+              <mat-label>Country</mat-label>
+              <input matInput placeholder="Country" formControlName="country" type="text" required>
+            </mat-form-field>
+            <div class="button">
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="show2()" matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <!-- ...................................SOCIAL FORM............................................. -->
+        <mat-step [stepControl]="social" errorMessage="social is required.">
+          <ng-template matStepLabel>Social</ng-template>
+          <form class="row" id="myform" [formGroup]="social" (ngSubmit)="submitSocial(social.value)" >
+            <div formArrayName="contact" *ngFor="let contct of getcontacts?.controls; let i = index;">
+              <div [formGroupName]="i" class="row">
+                <mat-form-field class=" col-md-5" >
+                  <mat-label>Contacts</mat-label>
+                  <mat-select matNativeControl required formControlName="contacts">
+                    <mat-option value="email">E-Mail</mat-option>
+                    <mat-option value="linkedin">LinkedIn</mat-option>
+                    <mat-option value="facebook">Facebook</mat-option>
+                    <mat-option value="github">Github</mat-option>
+                    <mat-option value="telegram">Telegram</mat-option>
+                    <mat-option value="instagram">Instagram</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field class=" col-md-5" >
+                  <input matInput placeholder="URL Address" formControlName="url" type="text" required>
+                </mat-form-field>
+                <button (click)="remove(i)"*ngIf="i>2" type="button" mat-icon-button color="warn">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>        
+            </div>
+            <div class="button">
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="add()">Add</button>
+              <button mat-button (click)="show3()" matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <!-- ...................................OBJECTIVE FORM............................................. -->
+        <mat-step [stepControl]="objective" errorMessage="objective is required.">
+          <ng-template matStepLabel>objective</ng-template>
+          <form class="row" [formGroup]="objective" (ngSubmit)="submitObjective(objective.value)" >
+            <mat-form-field class="col-md-6">
+              <mat-label>Objective</mat-label>
+              <textarea input matInput placeholder="Objective" formControlName="objective" required></textarea>
+            </mat-form-field>
+            <div class="button">
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="show4()" (click)="valid()" >Done</button>
+              <button mat-button type="button"  >Preview</button>  <!--(click)="preview()"-->
+              <button mat-button type="button"  (click)="person_next()" >next</button>
+            </div>
+          </form>
+        </mat-step> 
+      </mat-stepper>
+    <!-- </div> -->
+    <!-- <div class="col-md-4" id="preview">
+      <mat-card *ngIf="personals">
+        <div class="container">
+          <div class="row">
+            <div><h3>Personal Details</h3></div>
+            <div class="col-1">{{person?.personal.firstname}}</div>
+            <div class="col-1" style="margin-left: 2%;">{{person?.personal.lastname}},</div>&nbsp;&nbsp;
+          
+          <div class="col-8" style="margin-left: 5%;">  S/o Mr. {{person?.personal.parentname}}</div>
+        </div>
+          <div>{{person?.personal.gender}}</div>
+          <div>{{person?.personal.contact}}</div>
+          <div>{{person?.personal.img}}</div>
+        </div>
+      </mat-card><br>
+      <mat-card *ngIf="addresss">
+        <div class="container">
+            <div><h3>Address</h3></div>
+            <div>{{person?.address.flat}}, {{person?.address.area}}, {{person?.address.town}}</div>
+          <div>{{person?.address.pincode}}, {{person?.address.state}}, {{person?.address.country}}</div>
+        </div>
+      </mat-card><br>
+      <mat-card *ngIf="socials">
+        <div class="container">
+            <div><h3>Social</h3></div>
+            <div *ngFor="let contact of person?.social" >
+              <div class="row">
+                <div class="col-1"  >{{contact.contacts}}:</div>
+                <div class="col-1" style="margin-left: 12%;" >{{contact.url}}</div>
+              </div>
+            </div>
+        </div>
+      </mat-card><br>
+      <mat-card *ngIf="objectives">
+        <div class="container">
+            <div><h3>Objective</h3></div>
+            <div>{{person?.objective.objective}}</div>
+        </div>
+      </mat-card><br>
+    </div> -->
+  </div>
+</div>
+  

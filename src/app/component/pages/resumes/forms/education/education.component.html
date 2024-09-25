@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="box row" >
+    <div class="col" id="row1">
+        <form class="row" [formGroup]="secondary" (ngSubmit)="submitSecondary(secondary.value)">
+           <mat-form-field class="col-md-6 p-2">
+             <mat-label>School</mat-label>
+             <input matInput placeholder="School Name(ex: Columbia University)" formControlName="school" type="text" required>
+           </mat-form-field>
+           <mat-form-field class="col-md-6 p-2">
+             <mat-label>Degree</mat-label>
+             <input matInput placeholder="Degree(ex: Bachelor's)" formControlName="degree" type="text" >
+           </mat-form-field>
+          <mat-form-field class="col-md-6 p-2">
+             <mat-label>Field of study</mat-label>
+             <input matInput placeholder="Field of Study(ex: Business)" formControlName="field" type="text" >
+          </mat-form-field>
+          <mat-form-field class="col-md-6 p-2" >
+             <mat-label>Grade/Percentage</mat-label>
+             <input matInput placeholder="Grade" formControlName="grade" type="text" >
+          </mat-form-field>
+          <mat-form-field class="col-md-6 p-2" >
+            <mat-label>Starting Date</mat-label>
+            <input matInput placeholder="Starting mat-datepicker-toggle" formControlName="starting" type="month" >
+          </mat-form-field>
+          <mat-form-field class="col-md-6 p-2" >
+            <mat-label>Ending Date</mat-label>
+            <input matInput placeholder="Ending Date" formControlName="ending" type="month" >
+          </mat-form-field>
+        </form> 
+      <div class="button">  
+        <button mat-button (click)="backEducation()" >Previous</button>
+        <button mat-button (click)="reset()" >Add</button>
+        <button mat-button (click)="preview()">Preview</button>
+        <button mat-button (click)="nextEducation()">Next</button>
+      </div>
+   </div> 
+ </div>
+</div> 
+
+     
+   

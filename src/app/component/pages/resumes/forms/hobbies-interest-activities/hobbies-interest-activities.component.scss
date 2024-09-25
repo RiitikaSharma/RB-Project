@@ -1,0 +1,52 @@
+
+  
+.container{
+    margin-top: -74px;
+    width: 100%;
+}
+form{
+   
+    display: flex;    
+    flex-direction: row;
+    align-items: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+ 
+    mat-grid-tile{
+        width: 50%;
+        margin-left: 27%;
+    }
+    mat-grid-tile-content{
+        margin-top: 17px;
+    }
+}
+
+mat-stepper{
+    width: 100%;
+    margin: auto;
+    border: 0px;
+    background-color: #f8f9fa;
+    
+}
+.mat-horizontal-content-container{
+    margin-top: 5px;
+}
+mat-label{
+    color: rgb(80, 77, 77);
+}
+.button{
+    display: flex;
+    justify-content: flex-end;
+}
+#row{
+    margin-top: 67px;
+}
+
+@media only screen and (max-width: 800px) {
+    .container{
+        padding: 0;
+    }
+    mat-stepper{
+        margin-left: 3px ;
+    }
+}

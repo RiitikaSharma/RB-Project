@@ -1,0 +1,83 @@
+<div  class="container" style="background-color:transparent; ">
+  <div class="row">
+    <div class="col-md">
+      <div class="row" id="row1">
+        <div class="col">
+        <div class="circle " (click)="pagecontroller(1)" [class.selected]="cat == 1">
+            <mat-icon>account_circle</mat-icon>
+            <div class="name" *ngIf="view">Personal</div>
+          </div>
+        </div>
+        <div class="col">
+        <div  class="circle " (click)="pagecontroller(2)" [class.selected]="cat == 2">
+          <mat-icon>cast_for_education</mat-icon>
+          <div class="name" *ngIf="view">Education</div>
+        </div>
+        </div>
+        <div class="col">
+        <div  class="circle " (click)="pagecontroller(3)" [class.selected]="cat == 3">
+          <mat-icon>work_outline</mat-icon>
+          <div class="name" *ngIf="view">Professional</div>
+        </div>
+        </div>
+        <div class="col">
+        <div  class="circle " (click)="pagecontroller(4)" [class.selected]="cat == 4">
+          <mat-icon>menu</mat-icon>
+          <div class="name" *ngIf="view">Others</div>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="row2">
+          <div  class="col" [ngSwitch]="cat">   
+            <div  *ngSwitchCase="1"><app-personalinfo (Next)="person_next()"></app-personalinfo></div>
+            <div  *ngSwitchCase="2"><app-education (next)="addEducation()" (back)="backEducation()"></app-education></div>
+            <div  *ngSwitchCase="3"><app-workexp (Next)="professional_next()" (Back)="professional_back()"></app-workexp></div>
+            <div  *ngSwitchCase="4"><app-hobbies-interest-activities (back)="backOthers()"></app-hobbies-interest-activities></div>
+          </div>
+      </div>
+      <div>
+        <button mat-raised-button (click)="preview()">preview</button>
+      </div>
+    </div>
+    <div class="col-md-4" *ngIf="mat_card" id="preview">
+      <mat-card *ngIf="mat_card"> <!--*ngIf="personals"-->
+        <div class="container">
+          <div class="row">
+            <div><h3>Personal Details</h3></div>
+            <div class="col-1">{{person?.personal.firstname}}</div>
+            <div class="col-1" style="margin-left: 2%;">{{person?.personal.lastname}},</div>&nbsp;&nbsp;
+          
+          <div class="col-8" style="margin-left: 5%;">  S/o Mr. {{person?.personal.parentname}}</div>
+        </div>
+          <div>{{person?.personal.gender}}</div>
+          <div>{{person?.personal.contact}}</div>
+          <div>{{person?.personal.img}}</div>
+        </div>
+      </mat-card><br>
+      <mat-card *ngIf="mat_card" > <!--*ngIf="addresss"-->
+        <div class="container">
+            <div><h3>Address</h3></div>
+            <div>{{person?.address.flat}}, {{person?.address.area}}, {{person?.address.town}}</div>
+          <div>{{person?.address.pincode}}, {{person?.address.state}}, {{person?.address.country}}</div>
+        </div>
+      </mat-card><br>
+      <mat-card *ngIf="mat_card" > <!--*ngIf="socials"-->
+        <div class="container">
+            <div><h3>Social</h3></div>
+            <div *ngFor="let contact of person?.social" >
+              <div class="row">
+                <div class="col-1"  >{{contact.contacts}}:</div>
+                <div class="col-1" style="margin-left: 12%;" >{{contact.url}}</div>
+              </div>
+            </div>
+        </div>
+      </mat-card><br>
+      <mat-card *ngIf="mat_card" > <!--*ngIf="objectives"-->
+        <div class="container">
+            <div><h3>Objective</h3></div>
+            <div>{{person?.objective.objective}}</div>
+        </div>
+      </mat-card><br>
+    </div>
+  </div>
+</div>
